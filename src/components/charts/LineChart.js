@@ -8,7 +8,6 @@ class LineChart extends React.Component {
       }
     
       componentDidMount() {
-        console.log({props: this.props})
         const { data, options } = this.props
         this.myChart = new Chart(this.chartRef.current, {
             data,
