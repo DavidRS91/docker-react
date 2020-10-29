@@ -1,7 +1,7 @@
 import Chart from 'chart.js';
 import React from 'react';
 
-class BarChart extends React.Component {
+class LineChart extends React.Component {
     constructor(props) {
         super(props);
         this.chartRef = React.createRef();
@@ -13,13 +13,13 @@ class BarChart extends React.Component {
         this.myChart = new Chart(this.chartRef.current, {
             data,
             options,
-            type: 'bar'
+            type: 'line'
         });
       }
     
       render() {
         return (
-          <div style={defaultBarChartStyle}>
+          <div style={defaultLineChartStyle}>
           <canvas ref={this.chartRef} style={{
             backgroundColor:"white",
           }} />
@@ -28,11 +28,11 @@ class BarChart extends React.Component {
       }
   }
 
-  const defaultBarChartStyle = {
+  const defaultLineChartStyle = {
     width: "40vh", 
     margin: "1%",
     padding: "0.5%",
     backgroundColor: 'red'
     }
 
-  export default BarChart;
+  export default LineChart;

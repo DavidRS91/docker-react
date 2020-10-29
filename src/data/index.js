@@ -1,9 +1,11 @@
 const data = {
-    labels: ["A", "B", "C"],
+    labels: ["THATS MY BB", "B", "C"],
     datasets: [{
     label: "title",
-    data: [10,20,30],
-    backgroundColor: '#01F23B'
+    data: [15,30,45],
+    backgroundColor: 'pink', //Bar color
+    // borderColor: 'blue', //Border for each bar
+    // borderWidth: 15, //Border for each bar
     }]
     }
 
