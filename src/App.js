@@ -6,7 +6,13 @@ import LineChart from './components/charts/LineChart'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{
+      display: "flex",
+      flexWrap: "wrap",
+    }}>
+      <BarChart data={data} options={options} />
+      <BarChart data={data} options={options} />
+      <LineChart data={data} options={options} />
       <BarChart data={data} options={options} />
       <BarChart data={data} options={options} />
       <LineChart data={data} options={options} />
