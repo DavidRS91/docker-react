@@ -15,6 +15,10 @@ class BarChart extends React.Component {
             type: 'bar'
         });
       }
+
+      componentDidUpdate() {
+        this.myChart.update();
+      }
     
       render() {
         return (

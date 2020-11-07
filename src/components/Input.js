@@ -3,29 +3,16 @@ import React from 'react';
 class Input extends React.Component {
     constructor(props) {
         super(props);
-        const state = {};
-            for (const field of props.fields) {
-                state[field.name] = ""
-        }
-        this.state = state;
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+      }
 
     handleChange(event) {
-        const { value, name } = event.target; 
-        const state = this.state
-        state[name] = value;
-        this.setState(state)
-    }
-
-    handleSubmit(event) {
-        alert('form submitted')
-        event.preventDefault();
+        const { name, value } = event.target; 
+        this.props.handleChange(name, value);
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit}>
             {
                 this.props.fields.map((field)=> {
                     return (
@@ -33,9 +20,8 @@ class Input extends React.Component {
                         <label>{field.label}</label>
                         <input 
                         type={field.type}
-                        key={field.key} 
                         name={field.name} 
-                        value={this.state[field.name]}
+                        value={this.props.values[field.name]}
                         onChange={this.handleChange}
                         />
                         </React.Fragment>

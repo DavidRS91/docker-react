@@ -15,6 +15,12 @@ class LineChart extends React.Component {
             type: 'line'
         });
       }
+
+
+      componentDidUpdate() {
+        this.myChart.update();
+      }
+    
     
       render() {
         return (
