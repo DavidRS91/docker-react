@@ -1,5 +1,5 @@
 const data = {
-    labels: ["THATS MY BB", "B", "C"],
+    labels: ["Field A", "Field B", "Field C"],
     datasets: [{
     label: "title",
     data: [15,30,45],
