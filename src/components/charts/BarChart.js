@@ -8,18 +8,6 @@ class BarChart extends React.Component {
       }
     
       componentDidMount() {
-        // dummy request
-          fetch("http://localhost:8010/products")
-            .then(res => res.json())
-            .then(
-              (result) => {
-               console.log({result});
-              },
-              (error) => {
-                console.log({error});
-              }
-            )
-        
         const { data, options } = this.props
         this.myChart = new Chart(this.chartRef.current, {
             data,
