@@ -1,5 +1,6 @@
 import Chart from 'chart.js';
 import React from 'react';
+import randomColor from '../../utils/color'
 
 class BarChart extends React.Component {
     constructor(props) {
@@ -35,7 +36,9 @@ class BarChart extends React.Component {
     width: "40vh", 
     margin: "1%",
     padding: "0.5%",
-    backgroundColor: 'red'
+    borderColor: randomColor,
+    borderWidth: 'thick',
+    borderStyle: 'solid',
     }
 
   export default BarChart;

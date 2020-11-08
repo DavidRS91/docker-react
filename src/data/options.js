@@ -4,8 +4,6 @@ const options = {
       yAxes: [{
         ticks: {
           beginAtZero: true,
-          max: 50
-
         }
       }]
     }

@@ -1,12 +1,22 @@
-const data = {
-    labels: ["Field A", "Field B", "Field C"],
-    datasets: [{
-    label: "title",
-    data: [15,30,45],
-    backgroundColor: 'pink', //Bar color
-    // borderColor: 'blue', //Border for each bar
-    // borderWidth: 15, //Border for each bar
-    }]
+import randomColor from '../utils/color'
+function getData(num) {
+        let chartData = [];
+        let labels = [];
+        for (let i = 0; i < num; i++) {
+            chartData.push(Math.random() * 50)
+            labels.push(`Field ${i}`)
+        }
+        
+        const data = {
+            labels,
+            datasets: [{
+                label: "sample dataset",
+                data: chartData,
+                backgroundColor: randomColor,
+            }]
+        }
+        return data;
     }
+export default getData;
 
-export default data;
+

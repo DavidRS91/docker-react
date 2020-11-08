@@ -1,5 +1,5 @@
 import React from 'react'
-import data from '../data';
+import getData from '../data';
 import options from '../data/options';
 import BarChart from './charts/BarChart'
 import LineChart from './charts/LineChart'
@@ -9,17 +9,19 @@ import forms from '../data/formData'
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
-        const state = {};
+        const state = {
+            form: {}
+        };
             for (const field of forms.test) {
-                state[field.name] = ""
+                state.form[field.name] = ""
         }
-        state.data = data;
+        state.data = getData(12);
         this.state = state;
     }
     handleSubmit(event) {
         const newData = []
          for (const field of forms.test) {
-             newData.push(this.state[field.name])
+             newData.push(this.state.form[field.name])
          }
         const state = this.state
         state.data.datasets[0].data = newData;
@@ -29,7 +31,7 @@ class Dashboard extends React.Component {
 
     handleChange(name, value) {
         const state = this.state
-        state[name] = value;
+        state.form[name] = value;
         this.setState(state);
     }
 
@@ -42,18 +44,15 @@ class Dashboard extends React.Component {
                 <Input fields={forms.test} 
                 handleSubmit={this.handleSubmit.bind(this)} 
                 handleChange={this.handleChange.bind(this)}
-                values={this.state} 
+                values={this.state.form} 
                 />
                 <div className="charts" style={{
                 display: "flex",
                 flexWrap: "wrap",
               }}>
                 <BarChart data={this.state.data} options={options} />
-                <BarChart data={this.state.data} options={options} />
                 <LineChart data={this.state.data} options={options} />
                 <BarChart data={this.state.data} options={options} />
-                <BarChart data={this.state.data} options={options} />
-                <LineChart data={this.state.data} options={options} />
               </div>
               </div>
           
